@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary-dark: #f3eaea;
+  --accent-gold: #f9b132;
+  --accent-pink: #e3cdd3;
+  --bg-light: #f3f3f3;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+ background: linear-gradient(90deg, #1F1C2C, #928DAB);
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  filter: blur(70px);
+  z-index: -1;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  z-index: -1;
+  filter: blur(60px);
+  opacity: 0.4;
+  background: var(--accent-gold);
+  top: -100px;
+  right: -100px;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+}
+
+/* الحاوية */
+.container {
+  margin-top: 120px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.task-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  width: 500px;
+  padding: 35px;
+
+  background: linear-gradient(180deg, #2b2447, #1f1a35);
+  border-radius: 25px;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+  backdrop-filter: blur(20px);
+}
+
+/* العنوان */
+.title {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* إضافة مهمة */
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+}
+
+.add-task button {
+  background: var(--accent-gold);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* الفلاتر */
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filters button {
+  background: rgba(255,255,255,0.3);
+  border: none;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* قائمة المهام */
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-item {
+  background: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* الأزرار */
+.buttons button {
+  margin-left: 8px;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #0d0d0d;
+}
+
+.delete {
+  background: #ef4444;
+  color: rgb(250, 247, 247);
+}
+/* زر الإكمال */
+.complete-btn {
+  background: #e5e7eb;   /* خلفية فاتحة */
+  color: #000;           /* النص أسود */
+  font-weight: 600;
+}
+
+/* عند التحويم */
+.complete-btn:hover {
+  background: #ae923d21;
+}
+.task-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggle-desc {
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.description {
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.15);
+  font-size: 14px;
+}
